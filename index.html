@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>German Vocabulary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        #word-display {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 70px;
+        }
+        .button-container {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        #nextButton, #prevButton {
+            margin: 0 10px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>German Vocabulary</h1>
+    <div id="word-display">Apple - Apfel</div>
+    <div class="button-container">
+        <button id="prevButton" onclick="previousWord()">Previous</button>
+        <button id="nextButton" onclick="nextWord()">Next</button>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const words = [
+    ['Apple', 'Apfel'],
+    ['Banana', 'Banane'],
+    ['Cat', 'Katze'],
+    ['Dog', 'Hund'],
+    ['House', 'Haus'],
+    ['Car', 'Auto'],
+    ['Flower', 'Blume'],
+    ['Sun', 'Sonne'],
+    ['Moon', 'Mond'],
+    ['Water', 'Wasser'],
+    ['Tree', 'Baum'],
+    ['Mountain', 'Berg'],
+    ['Book', 'Buch'],
+    ['Chair', 'Stuhl'],
+    ['Table', 'Tisch'],
+    ['Bird', 'Vogel'],
+    ['Fish', 'Fisch'],
+    ['Window', 'Fenster'],
+    ['Door', 'Tür'],
+    ['Friend', 'Freund'],
+    ['Family', 'Familie'],
+    ['Love', 'Liebe'],
+    ['Smile', 'Lächeln'],
+    ['Heart', 'Herz'],
+    ['School', 'Schule'],
+    ['Teacher', 'Lehrer'],
+    ['Student', 'Schüler'],
+    ['Hospital', 'Krankenhaus'],
+    ['Doctor', 'Arzt'],
+    ['Nurse', 'Krankenschwester'],
+    ['Food', 'Essen'],
+    ['Drink', 'Trinken'],
+    ['Music', 'Musik'],
+    ['Dance', 'Tanzen'],
+    ['Sleep', 'Schlafen'],
+    ['Wake up', 'Aufwachen'],
+    ['Travel', 'Reisen'],
+    ['Beach', 'Strand'],
+    ['Ocean', 'Ozean'],
+    ['Forest', 'Wald'],
+    ['Mountain', 'Berg'],
+    ['River', 'Fluss'],
+    ['Lake', 'See'],
+    ['City', 'Stadt'],
+    ['Country', 'Land'],
+    ['World', 'Welt'],
+    ['Time', 'Zeit'],
+    ['Day', 'Tag'],
+    ['Night', 'Nacht'],
+    ['Week', 'Woche'],
+    ['Month', 'Monat'],
+    ['Year', 'Jahr'],
+    ['Number', 'Zahl'],
+    ['Color', 'Farbe'],
+    ['Red', 'Rot'],
+    ['Blue', 'Blau'],
+    ['Green', 'Grün'],
+    ['Yellow', 'Gelb'],
+    ['Black', 'Schwarz'],
+    ['White', 'Weiß'],
+    ['Orange', 'Orange'],
+    ['Purple', 'Lila'],
+    ['Happy', 'Glücklich'],
+    ['Sad', 'Traurig'],
+    ['Angry', 'Wütend'],
+    ['Funny', 'Lustig'],
+    ['Beautiful', 'Schön'],
+    ['Ugly', 'Hässlich'],
+    ['Tall', 'Groß'],
+    ['Short', 'Klein'],
+    ['Strong', 'Stark'],
+    ['Weak', 'Schwach'],
+    ['Fast', 'Schnell'],
+    ['Slow', 'Langsam'],
+    ['Hot', 'Heiß'],
+    ['Cold', 'Kalt'],
+    ['Big', 'Groß'],
+    ['Small', 'Klein'],
+    ['Old', 'Alt'],
+    ['Young', 'Jung'],
+    ['Rich', 'Reich'],
+    ['Poor', 'Arm'],
+    ['Happy', 'Glücklich'],
+    ['Sad', 'Traurig'],
+    ['Right', 'Richtig'],
+    ['Wrong', 'Falsch'],
+    ['Good', 'Gut'],
+    ['Bad', 'Schlecht'],
+    ['Day', 'Tag'],
+    ['Night', 'Nacht'],
+    ['Morning', 'Morgen'],
+    ['Evening', 'Abend'],
+    ['Afternoon', 'Nachmittag'],
+    ['Now', 'Jetzt'],
+    ['Later', 'Später'],
+    ['Before', 'Vor'],
+    ['After', 'Nach'],
+    ['Here', 'Hier'],
+    ['There', 'Dort'],
+    ['Hello', 'Hallo']
+];
+
+
+        function previousWord() {
+            currentIndex = (currentIndex - 1 + words.length) % words.length;
+            updateWordDisplay();
+        }
+
+        function nextWord() {
+            currentIndex = (currentIndex + 1) % words.length;
+            updateWordDisplay();
+        }
+
+        function updateWordDisplay() {
+            const wordDisplay = document.getElementById('word-display');
+            wordDisplay.textContent = words[currentIndex][0] + ' - ' + words[currentIndex][1];
+        }
+    </script>
+</body>
+</html>
